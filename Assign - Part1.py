@@ -24,8 +24,8 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor() # MySQL cursor initialization, which interacts with SQL backend
 # The following are the SQL queries for creating TABLES and inserting their corresponding data elements
-TABLE_QUERIES = ['CREATE TABLE Products (Product_Name VARCHAR(255), Model_Name VARCHAR(255), Product_SerialNo VARCHAR(255), Group_Associated VARCHAR(255), product_MRP VARCHAR(255))',
-               'CREATE TABLE Groups_listing (Group_Name VARCHAR(255), group_description VARCHAR(255), isActive VARCHAR(255))']
+TABLE_QUERIES = ['CREATE TABLE Products (Product_Name VARCHAR(255), Model_Name VARCHAR(255), Product_SerialNo VARCHAR(255) PRIMARY KEY, Group_Associated VARCHAR(255), product_MRP VARCHAR(255))',
+               'CREATE TABLE Groups_listing (Group_Name VARCHAR(255) PRIMARY KEY, group_description VARCHAR(255), isActive VARCHAR(255))']
 INSERT_QUERIES = ['INSERT INTO Products (Product_Name, Model_Name, Product_SerialNo, Group_Associated, product_MRP) VALUES (%s, %s, %s, %s, %s)',
                   'INSERT INTO Groups_listing (Group_Name, group_description, isActive) VALUES (%s, %s, %s)']
 
