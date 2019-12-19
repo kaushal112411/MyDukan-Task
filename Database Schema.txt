@@ -1,0 +1,16 @@
+Table: {
+  Products: { 
+    Product_Name- VARCHAR,
+    Model_Name - VARCHAR,
+    Product_SerialNo - VARCHAR (could be converted to INT before loading to DB),
+    Group_Associated - VARCHAR (same as above, preprocessing can be done to convert),
+    product_MRP - VARCHAR (same as above, proprocessing can be done to conver)
+    }
+   Groups_listing: {
+    Group_Name - VARCHAR,
+    group_description - VARCHAR,
+    isActive - VARCHAR
+    }
+  }
+  -> If we want to apply a SQL join on these tables, we can do so on the columns Products.GroupAssociated on Groups_listing.Group_Name.
+  -> Possible further improvements are type castings to their implicit data types and small regex extractions to reduce redundancy.
